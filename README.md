@@ -1,2 +1,7 @@
 # antd-develop
-自己从0开始手写antd组件库
+
+从0开始手写antd组件库练手。
+
+#### 创建工程
+
+npm create-react-app antd --template typescript
