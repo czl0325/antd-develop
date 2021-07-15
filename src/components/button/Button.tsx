@@ -1,27 +1,29 @@
 import React from "react";
 import classNames from 'classnames';
 
-interface ButtonProps {
+interface BaseButtonProps {
   className?: string;
-  type?: string;
+  genre?: string;
   size?: string;
   disabled?: boolean;
   children?: React.ReactNode;
 }
 
+type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { type, size, disabled, children} = props
-  const classes = classNames('btn', {
-    [`btn-${type}`]: type, [`btn-${size}`]: size, 'disabled': disabled
+  const { className, genre, size, disabled, children, ...restProps} = props
+  const classes = classNames('btn', className, {
+    [`btn-${genre}`]: genre, [`btn-${size}`]: size, 'disabled': disabled
   })
   return (
-    <button className={classes} disabled={disabled}>{children}</button>
+    <button className={classes} disabled={disabled} {...restProps}>{children}</button>
   )
 }
 
 Button.defaultProps = {
   disabled: false,
-  type: 'default'
+  genre: 'default'
 }
 
 export default Button
