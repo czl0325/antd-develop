@@ -44,6 +44,8 @@ export const Menu: React.FC<MenuProps> = (props) => {
   )
 }
 
-Menu.defaultProps = {}
+Menu.defaultProps = {
+  direction: 'horizontal'
+}
 
 export default Menu

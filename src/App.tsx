@@ -13,7 +13,7 @@ function App() {
       <Button genre="info" size="sm">info</Button>
       <Button genre="danger" size="sm" onClick={()=>alert('danger')}>danger</Button>
       <br /><br /><br /><br /><hr /><br /><br /><br /><br />
-      <Menu active={0}>
+      <Menu active={0} onSelect={(name)=>alert(name)}>
         <MenuItem name={0}>Tab1</MenuItem>
         <MenuItem name={1}>Tab2</MenuItem>
         <MenuItem name={2}>Tab3</MenuItem>
