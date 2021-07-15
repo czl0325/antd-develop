@@ -9,7 +9,7 @@ interface BaseButtonProps {
   children?: React.ReactNode;
 }
 
-type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button: React.FC<ButtonProps> = (props) => {
   const { className, genre, size, disabled, children, ...restProps} = props
