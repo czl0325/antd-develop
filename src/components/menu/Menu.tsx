@@ -1,5 +1,6 @@
-import React, {Children, CSSProperties, useState} from "react";
+import React, {CSSProperties, useState} from "react";
 import classNames from "classnames";
+import {MenuItemProps} from "./MenuItem";
 
 type menuDirection = 'horizontal' | 'vertical'
 export interface MenuProps {
@@ -13,11 +14,12 @@ export interface MenuProps {
 
 interface IMenuContext {
   active: string|number;
+  direction?: menuDirection;
   onSelect?: (selectIndex:string|number)=>void
 }
 export const MenuContext = React.createContext<IMenuContext>({active: 0})
 
-export const Menu: React.FC<MenuProps> = (props) => {
+const Menu: React.FC<MenuProps> = (props) => {
   const {className, active, style, direction, onSelect, children} = props
   const classes = classNames('menu', className, {
     'menu-vertical': direction === 'vertical',
@@ -34,11 +36,22 @@ export const Menu: React.FC<MenuProps> = (props) => {
     active: current ? current : 0,
     onSelect: handleClick
   }
-
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>
+      if (childElement.type.displayName === 'MenuItem' || childElement.type.displayName === 'SubMenuItem') {
+        return React.cloneElement(childElement, {
+          name: childElement.props.name ? childElement.props.name : index
+        })
+      } else {
+        console.error('Menu组件内只能包含MenuItem或者SubMenuItem')
+      }
+    })
+  }
   return (
     <ul className={classes} style={style} >
       <MenuContext.Provider value={menuContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   )
