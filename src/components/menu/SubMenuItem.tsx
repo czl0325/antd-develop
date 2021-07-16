@@ -31,6 +31,9 @@ const SubMenuItem: React.FC<SubMenuItemProps> = (props) => {
       setMenuOpen(toggle)
     }, 300)
   }
+  const clickEvents = context.direction === 'vertical' ? {
+    onClick: (e: React.MouseEvent) => handleClick(e)
+  }: {}
   const hoverEvents = context.direction !== 'vertical' ? {
     onMouseEnter: (e: React.MouseEvent) => handleMouse(e, true),
     onMouseLeave: (e: React.MouseEvent) => handleMouse(e, false)
@@ -52,8 +55,8 @@ const SubMenuItem: React.FC<SubMenuItemProps> = (props) => {
     )
   }
   return (
-    <li key={name} className={subClasses} style={style} {...hoverEvents}>
-      <div className="submenu-title" >{title}</div>
+    <li key={name} className={subClasses} style={style} {...hoverEvents} >
+      <div className="submenu-title" {...clickEvents}>{title}</div>
       {renderChildren()}
     </li>
   )

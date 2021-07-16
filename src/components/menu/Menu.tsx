@@ -34,7 +34,8 @@ const Menu: React.FC<MenuProps> = (props) => {
   }
   const menuContext:IMenuContext = {
     active: current ? current : 0,
-    onSelect: handleClick
+    onSelect: handleClick,
+    direction: props.direction
   }
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {

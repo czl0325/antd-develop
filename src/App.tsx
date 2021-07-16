@@ -27,7 +27,12 @@ function App() {
       <Menu active={0} direction='vertical' style={{width: '200px'}}>
         <MenuItem name={0} >Tab1</MenuItem>
         <MenuItem name={1}>Tab2</MenuItem>
-        <MenuItem name={2}>Tab3</MenuItem>
+        <SubMenuItem name={2} title="Tab3">
+          <MenuItem name="3-1">3-1</MenuItem>
+          <MenuItem name="3-2">3-2</MenuItem>
+          <MenuItem name="3-3">3-3</MenuItem>
+        </SubMenuItem>
+        <MenuItem name={3}>Tab4</MenuItem>
       </Menu>
     </div>
   );
