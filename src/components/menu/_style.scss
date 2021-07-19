@@ -36,6 +36,7 @@
   }
   >.submenu {
     .submenu-title {
+      width: 100%;
       display: flex;
       align-items: center;
     }
@@ -52,6 +53,11 @@
         }
       }
     }
+    &:hover, &.active {
+      .submenu-title {
+        border-left: $menu-item-active-border-width solid $menu-item-active-color;
+      }
+    }
   }
 
 }
@@ -65,6 +71,15 @@
   }
   >.submenu {
     position: relative;
+    .arrow-icon {
+      margin-left: 3px;
+      transition: transform 0.25s ease-in-out;
+    }
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
     .submenu-title {
       display: flex;
       align-items: center;

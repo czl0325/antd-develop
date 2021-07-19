@@ -4,6 +4,7 @@ import Button from "./components/button/Button";
 import Menu from "./components/menu/Menu";
 import MenuItem from "./components/menu/MenuItem";
 import SubMenuItem from "./components/menu/SubMenuItem";
+import Icon from "./components/icon/Icon"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         </SubMenuItem>
         <MenuItem name={3}>Tab4</MenuItem>
       </Menu>
+      <Icon icon="coffee" size="10x"/>
     </div>
   );
 }
