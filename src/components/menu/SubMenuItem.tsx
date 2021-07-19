@@ -3,6 +3,7 @@ import classNames from "classnames";
 import MenuItem, {MenuItemProps} from "./MenuItem";
 import {MenuContext} from "./Menu";
 import Icon from '../icon/Icon';
+import Transition from "../transition/Transition";
 
 export interface SubMenuItemProps {
   name?: string|number;
@@ -50,9 +51,11 @@ const SubMenuItem: React.FC<SubMenuItemProps> = (props) => {
       }
     })
     return (
-      <ul className={subclasses}>
-        {childrenComponents}
-      </ul>
+      <Transition in={open} timeout={300} animation="zoom-in-top">
+        <ul className={subclasses}>
+          {childrenComponents}
+        </ul>
+      </Transition>
     )
   }
   return (
@@ -67,7 +70,7 @@ const SubMenuItem: React.FC<SubMenuItemProps> = (props) => {
 }
 
 SubMenuItem.defaultProps = {
-  menuOpen: false
+  menuOpen: false,
 }
 SubMenuItem.displayName = "SubMenuItem"
 

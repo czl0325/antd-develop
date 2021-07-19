@@ -94,7 +94,6 @@
       height: inherit;
       padding: 0;
       max-height: 200px;
-      display: none;
 
       .menu-item {
         padding: $menu-item-padding-y $menu-item-padding-x;
@@ -107,7 +106,7 @@
       }
     }
     .submenu-popup.menu-open {
-      display: block;
+
     }
   }
 }
