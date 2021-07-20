@@ -35,6 +35,10 @@
   @include button-style($primary, $primary, $white)
 }
 
+.btn-success {
+  @include button-style($success, $success, $white)
+}
+
 .btn-warning {
   @include button-style($warning, $warning, $white)
 }
@@ -45,6 +49,14 @@
 
 .btn-info {
   @include button-style($info, $info, $white)
+}
+
+.btn-light {
+  @include button-style($light, $light, $black)
+}
+
+.btn-dark {
+  @include button-style($dark, $dark, $white)
 }
 
 .btn-default {

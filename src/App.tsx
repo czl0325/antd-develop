@@ -35,7 +35,7 @@ function App() {
         </SubMenuItem>
         <MenuItem name={3}>Tab4</MenuItem>
       </Menu>
-      <Icon icon="coffee" size="10x"/>
+      <Icon icon="coffee" size="lg" theme="primary"/>
     </div>
   );
 }
