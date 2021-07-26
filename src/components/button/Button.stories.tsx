@@ -20,17 +20,3 @@ button.args = {
   children: '这是一个按钮组件'
 }
 
-// const buttonWithType = () => (
-//   <>
-//     <Button genre="primary">Primary Button</Button>
-//     <Button genre="success">Success Button</Button>
-//     <Button genre="danger">Danger Button</Button>
-//     <Button genre="warning">Warning Button</Button>
-//     <Button genre="dark">Dark Button</Button>
-//     <Button genre="light">Light Button</Button>
-//   </>
-// )
-//
-// storiesOf('Button component', module)
-//   .add('不同类型的Button', buttonWithType)
-

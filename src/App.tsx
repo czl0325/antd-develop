@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/index.scss';
 import Button from "./components/button/Button";
 import Menu from "./components/menu/Menu";
 import MenuItem from "./components/menu/MenuItem";
 import SubMenuItem from "./components/menu/SubMenuItem";
 import Icon from "./components/icon/Icon"
+import Input from "./components/input/Input";
 
 function App() {
+  const [inputValue, setInputValue] = useState('123')
   return (
     <div className="App">
       <Button genre="default" size="lg">default</Button>
@@ -36,6 +38,8 @@ function App() {
         <MenuItem name={3}>Tab4</MenuItem>
       </Menu>
       <Icon icon="coffee" size="lg" theme="primary"/>
+      <Input prefix="前缀" suffix="后缀" icon="coffee" placeholder="请输入..." value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
+      <span>输入框的值是：{inputValue}</span>
     </div>
   );
 }
