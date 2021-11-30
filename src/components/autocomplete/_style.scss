@@ -1,0 +1,30 @@
+.auto-complete-wrapper {
+  width: 100%;
+  position: relative;
+
+  ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    min-height: 100px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: left;
+      background-color: white;
+      &:hover {
+        background-color: $menu-item-active-color;
+        opacity: 0.2;
+        color: white;
+      }
+    }
+  }
+}

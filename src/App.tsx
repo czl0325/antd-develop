@@ -6,6 +6,7 @@ import MenuItem from "./components/menu/MenuItem";
 import SubMenuItem from "./components/menu/SubMenuItem";
 import Icon from "./components/icon/Icon"
 import Input from "./components/input/Input";
+import AutoComplete from "./components/autocomplete/AutoComplete";
 
 function App() {
   const [inputValue, setInputValue] = useState('123')
@@ -40,6 +41,7 @@ function App() {
       <Icon icon="coffee" size="lg" theme="primary"/>
       <Input prefix="前缀" suffix="后缀" icon="coffee" placeholder="请输入..." value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
       <span>输入框的值是：{inputValue}</span>
+      <AutoComplete />
     </div>
   );
 }

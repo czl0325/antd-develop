@@ -16,6 +16,6 @@ describe("测试Input组件", () => {
     expect(wrapperNode).toHaveClass('ant-input-wrapper')
     fireEvent.change(inputNode, {target: {value: '123'}})
     expect(defaultProps.onChange).toHaveBeenCalled()
-
+    expect(inputNode.value).toEqual('123')
   })
 })
